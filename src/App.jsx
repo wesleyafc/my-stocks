@@ -1,5 +1,8 @@
-import { useEffect, useState } from 'react'
-import { Container } from './components/TransactionsTable/styles'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 import { Transactions } from './components/transactions/index'
 import { GlobalStyles } from './globalStyles'
@@ -9,11 +12,14 @@ function App() {
 
 
   return (
-    <>
-      <Transactions />
-      <GlobalStyles />
 
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/transactions" element={<Transactions />} />
+      </Routes>
+
+      <GlobalStyles />
+    </BrowserRouter>
 
   );
 }

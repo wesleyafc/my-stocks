@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Container, Main } from './styles';
 import { IoMdOpen } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 export function Transactions() {
 
@@ -75,7 +76,9 @@ export function Transactions() {
                                     <button>delete</button>
                                 </td>
                                 <td className="newTab">
-                                    <IoMdOpen />
+                                    <Link to={`/transaction/${_id}`}>
+                                        <IoMdOpen />
+                                    </Link>
                                 </td>
                             </tr>
                         </tbody>
