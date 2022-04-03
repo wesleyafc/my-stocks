@@ -1,7 +1,7 @@
 import { Container, Main } from './styles';
 import { TransactionBody } from '../transaction/index'
 
-export function Transactions() {
+export function Transactions({ transactions }) {
 
     return (
 
@@ -18,10 +18,15 @@ export function Transactions() {
                         <th>opções</th>
                     </tr>
                 </thead>
-                <TransactionBody />
-                <TransactionBody />
-                <TransactionBody />
-                <TransactionBody />
+
+                {transactions.map((t) => (
+                    <TransactionBody
+                        transaction={t}
+                        key={t._id}
+                    />
+                ))}
+
+
 
             </Main>
         </Container>
