@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 
 export const Container = styled.div`
+        margin: auto;
         width: 90%;
-        height: 100%;
         border: 1px solid #ccc;
         border-radius: 5px;
-        margin: 0 0 0 10px;
+        padding: 10px;
 
     h1{
     color:white;
@@ -47,7 +47,6 @@ export const Container = styled.div`
 export const Main = styled.table`
 width: 100%;
 color:whitesmoke;
-padding:0 5px 0 5px;
     td, th{
         border:1px solid var(--light-black-color);
         
@@ -69,10 +68,9 @@ padding:0 5px 0 5px;
 
     tbody tr td{
         padding:16px 0 16px 0;
-        border-radius:3px;
+        border-radius:8px;
         background-color:var(--light-black-color);
         text-align:center;
-        border:1px solid gray;
     }
 
 
