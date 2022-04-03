@@ -55,7 +55,7 @@ export function Transactions() {
                     data.map(({ _id,
                         actionsName,
                         description,
-                        quotasAcmount,
+                        quotasAmmount,
                         singleQuotaValue,
                         totalValue,
                         createdAt
@@ -66,7 +66,7 @@ export function Transactions() {
                             <tr>
                                 <td>{actionsName}</td>
                                 <td>{description}</td>
-                                <td>{quotasAcmount}</td>
+                                <td>{quotasAmmount}</td>
                                 <td>{singleQuotaValue}</td>
                                 <td>{totalValue}</td>
                                 <td>{createdAt}</td>

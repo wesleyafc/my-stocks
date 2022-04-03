@@ -9,7 +9,7 @@ export function TransactionBody({ transaction }) {
     const dateFormatted = date.toLocaleDateString('pt-BR');
 
     //make multiply by single value by total amount
-    const resultTotal = transaction.quotasAcmount * transaction.singleQuotaValue;
+    const resultTotal = transaction.quotasAmmount * transaction.singleQuotaValue;
     const currencyFormatted = new Intl.NumberFormat('pt-BR',
         {
             style: 'currency',
@@ -22,7 +22,7 @@ export function TransactionBody({ transaction }) {
         <tbody>
             <tr>
                 <td>{transaction.actionsName}</td>
-                <td>{transaction.quotasAcmount}</td>
+                <td>{transaction.quotasAmmount}</td>
                 <td>R$ {transaction.singleQuotaValue}</td>
                 <td>{currencyFormatted}</td>
                 <td>{dateFormatted}</td>
