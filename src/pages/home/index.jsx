@@ -4,8 +4,9 @@ import { api_url } from '../../apiURL'
 import { Header } from '../../components/header'
 import { Sidebar } from '../../components/sidebar'
 import { Transactions } from '../../components/transactions'
-
 import { HomeContainer } from './styles'
+import { NewTransactionModal } from '../../components/modal'
+
 
 
 export function Home() {
@@ -21,12 +22,16 @@ export function Home() {
         fetchTransactions()
     }, [])
     return (
-        <>
+        <div>
             <Header />
+            <NewTransactionModal />
+
+
             <HomeContainer>
                 <Transactions transactions={transactions} />
                 <Sidebar />
             </HomeContainer>
-        </>
+
+        </div>
     )
 }

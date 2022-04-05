@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
 
-    margin-top:60px;
-    margin-bottom:60px;
 
     .headerTitles{
         display:flex;

@@ -33,4 +33,18 @@ body{
 
 }
 
+.close-modal-button{
+    position:absolute;
+    right:1.5rem;
+    top:1.5rem;
+    border:0;
+    background:transparent;
+    font-size:1rem;
+    cursor:pointer;
+
+    &:hover{
+        color:red;
+    }
+}
+
 `;
