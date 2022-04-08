@@ -1,4 +1,3 @@
-import { Sidebar } from '../../components/sidebar/'
 import { SingleContainer } from './styles'
 
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
