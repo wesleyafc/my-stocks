@@ -1,18 +1,25 @@
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 import { GlobalStyles } from './globalStyles'
-
-import { NavBar } from '../src/components/navbar/index'
 import { Home } from '../src/pages/home/index'
+import { NavBar } from '../src/components/navbar'
 
 function App() {
 
 
 
   return (
-    <>
+    <Router>
       <NavBar />
-      <Home />
+      <Routes>
+        <Route exact path="/transactions" element={<Home />} />
+      </Routes>
       <GlobalStyles />
-    </>
+    </Router>
+
   );
 }
 

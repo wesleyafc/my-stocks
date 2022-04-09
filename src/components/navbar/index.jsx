@@ -1,5 +1,11 @@
+import {
+    BrowserRouter as Router,
+    Route,
+    Routes,
+    Link
+} from "react-router-dom";
 import { NavBarComponent } from './styles'
-import { AiOutlineSearch } from "react-icons/ai";
+// import { AiOutlineSearch } from "react-icons/ai";
 
 export function NavBar() {
     return (
@@ -8,16 +14,26 @@ export function NavBar() {
 
             <div className="topCenter">
                 <ul className="topList">
-                    <li className="topListItem">
-                        HOME
-                    </li>
-                    <li className="topListItem">ABOUT</li>
-                    <li className="topListItem">CONTACT</li>
+                    <Link
+                        className="topListItem"
+                        to="/">
+                        HOMEPAGE
+                    </Link>
 
-                    <li className="topListItem">LOGOUT</li>
+                    <Link
+                        className="topListItem"
+                        to="about">
+                        ABOUT
+                    </Link>
+
+                    <Link
+                        className="topListItem"
+                        to="/transactions">
+                        TRANSACTIONS
+                    </Link>
                 </ul>
             </div>
-            <div className="topRight">
+            {/* <div className="topRight">
 
 
                 <ul className="topList">
@@ -37,7 +53,7 @@ export function NavBar() {
                 />
                 <AiOutlineSearch className="topSearchIcon" />
 
-            </div>
+            </div> */}
         </NavBarComponent>
 
     );
