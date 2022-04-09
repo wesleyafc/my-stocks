@@ -1,1 +1,1 @@
-export const api_url = "http://localhost:3333"
+export const api_url = "https://fii-api.herokuapp.com"
