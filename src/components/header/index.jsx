@@ -1,17 +1,17 @@
-import { HeaderContainer } from './styles';
+import { TextContainer } from './styles';
 
 export function Header() {
     return (
-        <HeaderContainer>
-            <div className="headerTitles">
-                <span className="headerTitleSm">compras &vendas de ações</span>
-                <span className="headerTitleLg">FII</span>
-            </div>
-            <img
-                className="headerLogo"
-                src="https://www.tororadar.com.br/hubfs/LPs_conteudo/images/hero-img-day-trade.jpg"
-                alt=""
-            />
-        </HeaderContainer>
+        <TextContainer>
+            <h1>
+                Bem Vindo
+            </h1>
+            <p>
+                Em Nosso sistema voce pode Anotar & acopanhar
+                suas compras , vendas e lucros de ações.
+                <br /> Tudo isso com um sistema simples e
+                intuitivo.
+            </p>
+        </TextContainer>
     )
 }

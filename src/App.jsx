@@ -5,7 +5,8 @@ import {
 } from "react-router-dom";
 import { GlobalStyles } from './globalStyles'
 import { Home } from '../src/pages/home/index'
-import { NavBar } from '../src/components/navbar'
+import { NavBar } from '../src/components/nav'
+import { NewHome } from './components/nav'
 
 function App() {
 

@@ -1,33 +1,17 @@
 import styled from 'styled-components';
 
+export const TextContainer = styled.div`
+    background-color:var(--green-color);
+    text-align: center;
+    color:var(--light-white);
+    text-transform:capitalize;
+    padding-top:100px;
 
-export const HeaderContainer = styled.header`
-
-
-    .headerTitles{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        color:#444;
+    h1{
+        font-size:2.5rem;
     }
-
-    .headerTitleSm{
-        position:absolute;
-        top:18%;
-        font-size:20px;
-    }
-
-    .headerTitleLg{
-        position:absolute;
-        top:20%;
-        font-size:100px;
-
-    }
-
-    .headerLogo{
-        width:100%;
-        height:450px;
-        margin-top:80px;
-        object-fit:cover;
+    p{
+        font-size:1.5rem;
+        word-break: break-word;
     }
 `
