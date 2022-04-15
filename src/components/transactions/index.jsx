@@ -1,37 +1,49 @@
-import { Container, Main } from './styles';
-import { TransactionBody } from '../transaction/index'
+import { useState, useEffect } from 'react';
+import { Transaction } from '../transaction'
 
-export function Transactions({ transactions }) {
+import { UlContainer } from './styles'
+import axios from 'axios'
 
+import { api_url } from '../../utils/apiURL'
+import { NewTransactionModal } from '../newTransaction';
+
+import { HalfMalf } from 'react-spinner-animated'
+import 'react-spinner-animated/dist/index.css'
+
+export function Transactions() {
+    const [transactions, setTransactions] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+
+    useEffect(() => {
+        const fetchTransactions = async () => {
+            setIsLoading(true)
+            const response = await axios.get(api_url + "/transactions")
+            setTransactions(response.data)
+            setIsLoading(false)
+        }
+
+        fetchTransactions()
+    }, [])
     return (
 
-        <Container>
-            <h1>Recent Transactions</h1>
-            <Main>
-                <thead>
-                    <tr>
-                        <th>ação</th>
-                        <th>qtd de cotas</th>
-                        <th>valor unitario</th>
-                        <th>valor total</th>
-                        <th>comprado em</th>
-                        <th>opções</th>
-                    </tr>
-                </thead>
+        <>
+            <NewTransactionModal />
+            <UlContainer >
+                {isLoading ? <HalfMalf
+                    text={"Loading..."}
+                    type="TailSpin"
+                    isLoading={isLoading}
+                    speed={5}
+                />
+                    : ''}
 
-                {transactions.map((t) => (
-                    <TransactionBody
-                        transaction={t}
-                        key={t._id}
-                    />
+                {transactions.map((transaction, index) => (
+                    <li key={index}>
+                        <Transaction transaction={transaction} />
+                    </li>
                 ))}
-
-
-
-            </Main>
-        </Container>
-
+            </UlContainer>
+        </>
 
     )
-
 }

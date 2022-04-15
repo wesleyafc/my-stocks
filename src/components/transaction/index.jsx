@@ -1,58 +1,73 @@
-import { api_url } from '../../apiURL'
+import { TransactionContainerCards } from './styles'
+import { Button } from '@mui/material'
+import { Link } from 'react-router-dom'
+
 import axios from 'axios'
-import { Buttons } from './styles'
-import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
+import { api_url } from '../../utils/apiURL'
 
-export function TransactionBody({ transaction }) {
 
-    //format data timestamp
-    const date = new Date(transaction.createdAt);
-    const dateFormatted = date.toLocaleDateString('pt-BR');
+
+export function Transaction(props) {
+    const {
+        _id,
+        actionsName,
+        createdAt,
+        quotasAmmount,
+        singleQuotaValue
+    } = props.transaction
+
+    //format data timestamp createdAt and updatedAt
+    const createdAtFormatted = new Date(createdAt).toLocaleDateString('pt-BR')
 
     //make multiply by single value by total amount
-    const resultTotal = transaction.quotasAmmount * transaction.singleQuotaValue;
-    const currencyFormatted = new Intl.NumberFormat('pt-BR',
+    const resultTotal = quotasAmmount * singleQuotaValue;
+    const resultTotalFormatted = new Intl.NumberFormat('pt-BR',
         {
             style: 'currency',
             currency: 'BRL'
         }
     ).format(resultTotal);
 
+    const singleQuotaValueFormatted = new Intl.NumberFormat('pt-BR',
+        {
+            style: 'currency',
+            currency: 'BRL'
+        }
+    ).format(singleQuotaValue);
+
+
     const handleDeleteTransaction = async () => {
-        const id = transaction._id
-        //create confirmation before deleting transaction
-        const confirm = window.confirm(`Deseja excluir as ações *# ${transaction.actionsName} #* no valor de ${currencyFormatted} ?
-       ISSO NÃO PODE SER DESFEITO!!!
-        `)
+        //create confirmation message before deleting transaction
+        const confirm = window.confirm('Deseja realmente excluir essa transação?')
         if (confirm) {
-            await axios.delete(api_url + '/transaction/' + id)
+            await axios.delete(api_url + `/transaction/${_id}`)
             window.location.reload()
         }
     }
 
     return (
+        <>
+            <TransactionContainerCards>
+                <h1>{actionsName}</h1>
+                <h3>Total: {resultTotalFormatted}</h3>
+                <h4>Single Price: {singleQuotaValueFormatted}</h4>
+                <h2>Ammount: {quotasAmmount}</h2>
 
-        <tbody>
-            <tr>
-                <td>{transaction.actionsName}</td>
-                <td>{transaction.quotasAmmount}</td>
-                <td>R$ {transaction.singleQuotaValue}</td>
-                <td>{currencyFormatted}</td>
-                <td>{dateFormatted}</td>
-                <td>
-                    <Buttons >
-                        <AiOutlineEdit
-                            className="optionIcon"
-                        />
+                <Button
+                    LinkComponent={Link}
+                    to={`/single-transaction-detail/${_id}`}
+                    sx={{ mt: "auto" }}
+                >Update</Button>
 
-                        <AiOutlineDelete
-                            onClick={handleDeleteTransaction}
-                            className="optionIcon"
-                        />
-                    </Buttons>
-                </td>
-            </tr>
-        </tbody>
 
+                <Button
+                    onClick={handleDeleteTransaction}
+                    sx={{ mt: "auto" }}>
+                    Delete</Button>
+
+                <p>{createdAtFormatted}</p>
+
+            </TransactionContainerCards >
+        </>
     )
 }

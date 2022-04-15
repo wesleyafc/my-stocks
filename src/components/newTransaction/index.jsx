@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { AiOutlineClose } from "react-icons/ai";
 import { ModalContainer, InputContainer } from './styles'
 import axios from 'axios';
-import { api_url } from '../../apiURL'
+import { api_url } from '../../utils/apiURL'
 Modal.setAppElement('#root');
 const customStyles = {
 
@@ -79,6 +79,8 @@ export function NewTransactionModal() {
                         onClick={handleCloseNewTransactionModal} />
                 </button>
 
+
+
                 <InputContainer>
                     <h2>nova entrada</h2>
                     <form
@@ -108,8 +110,6 @@ export function NewTransactionModal() {
                         <button type="submit">salvar</button>
                     </form>
                 </InputContainer>
-
-
             </Modal>
         </ModalContainer>
     )

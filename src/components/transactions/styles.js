@@ -1,81 +1,18 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-
-export const Container = styled.div`
-        width: 90%;
-        height: 100%;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 0 0 0 10px;
-
-    h1{
-    color:white;
-    font-size: 2.5em;
-    text-align: center;
-    padding:5%
-    }
-
-    button{
-    border: 0px;
-    cursor: pointer;
-    background-color: var(--gray-color);
-    text-align: center;
-    color: white;
-    width: 100%;
-    border-radius:8px;
-    display:block;
+export const UlContainer = styled.ul`
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-content: center;
+    flex-wrap: wrap;
+    
+    li{
+        list-style: none;
+        width:350px;
+        /* max-width:350px; */
+        max-height:400px;
+        margin:0.2rem;
 
     }
-
- 
-
-    button:hover{
-        opacity: 0.8;
-    }
-
-    .newTab{
-        cursor: pointer;
-    }
-    .newTab:hover{
-        color:green;
-    }
-
-`;
-
-
-
-export const Main = styled.table`
-width: 100%;
-color:whitesmoke;
-padding:0 5px 0 5px;
-    td, th{
-        border:1px solid var(--light-black-color);
-        
-    }
-
-    thead tr th{
-        padding:16px 0 16px 0;
-        border-radius:8px;
-        text-transform:capitalize
-    }
-
-
-    th{
-        padding:16px 0 16px 0;
-        text-align:center;
-        background-color: var(--green-color);
-        color:whitesmoke;
-    }
-
-    tbody tr td{
-        padding:16px 0 16px 0;
-        border-radius:3px;
-        background-color:var(--light-black-color);
-        text-align:center;
-        border:1px solid gray;
-    }
-
-
-`;
-
-
+`
