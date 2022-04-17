@@ -49,18 +49,22 @@ export function Transaction(props) {
         <>
             <TransactionContainerCards>
                 <h1>{actionsName}</h1>
-                <h3>Total: {resultTotalFormatted}</h3>
-                <h4>Single Price: {singleQuotaValueFormatted}</h4>
-                <h2>Ammount: {quotasAmmount}</h2>
+                <h3><span>Total</span> {resultTotalFormatted}</h3>
+                <hr />
+                <h4><span>Preço unitario</span> {singleQuotaValueFormatted}</h4>
+                <hr />
+                <h2> <span>Quantidade de cotas</span> {quotasAmmount}</h2>
+                <hr />
 
                 <Button
+                    className="update-button"
                     LinkComponent={Link}
                     to={`/single-transaction-detail/${_id}`}
                     sx={{ mt: "auto" }}
                 >Update</Button>
 
 
-                <Button
+                <Button className="delete-button"
                     onClick={handleDeleteTransaction}
                     sx={{ mt: "auto" }}>
                     Delete</Button>

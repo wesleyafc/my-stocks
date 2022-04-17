@@ -8,6 +8,7 @@ import { api_url } from "../../utils/apiURL";
 export function SingleTransaction() {
     const id = useParams().transaction_id
     const [inputs, setInputs] = useState({})
+    const cor = "#10b981"
 
 
     useEffect(() => {
@@ -86,6 +87,7 @@ export function SingleTransaction() {
                         name="singleQuotaValue"
                     />
                     <Button
+                        color="sucess"
                         onClick={senRequestFromDataBase}
                         variant="contained"
                         type="submit">save</Button>

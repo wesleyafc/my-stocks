@@ -56,9 +56,8 @@ export function NewTransactionModal() {
         };
 
         await axios.post(api_url + "/transaction", newTransaction)
-        window.location.replace('/')
+        window.location.replace('/transactions')
     }
-
     return (
         <ModalContainer>
 

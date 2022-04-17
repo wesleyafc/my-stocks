@@ -10,31 +10,64 @@ export const TransactionContainerCards = styled.div`
     flex-direction:column;
     justify-content:center;
     border-radius:0.5rem;
+    padding:2rem;
+    background-color:white;
+    border:1px solid var(--green-color);
+    color:var(--light-black-color);
 
+    h1{
+        padding:1rem;
+        color:var(--green-color);
 
-    h2{
-        font-family: 'Poppins', sans-serif;
-        font-size:1rem;
-        border:1px dashed #ef233c;
-        border-radius:0.2rem;
-        margin:1rem 0 1rem 0;
-        color:red;
 
     }
 
 
     h3{
+        font-family: 'Poppins', sans-serif;      
         font-size:1.5rem;
-        margin-top:0.5rem;
-        border:1px solid var(--green-color);
+        margin:1rem 0 1rem 0;
         border-radius:0.2rem;
+        text-align:right;
+        
+    }
+    
+    h3 span{
+        margin-left:3px; 
+        float:left; 
+        font-size:1rem;
+        margin-top:0.5rem;
     }
 
     h4{
+        font-family: 'Poppins', sans-serif;      
         font-size:1.5rem;
-        margin-top:0.5rem;
-        border:1px dashed gray;
+        margin:1rem 0 1rem 0;
         border-radius:0.2rem;
+        text-align:right;
+    }
+
+    h4 span{
+        margin-left:3px;
+        float:left;
+        font-size:1rem;
+        margin-top:0.2rem;
+    }
+
+    h2{
+        font-family: 'Poppins', sans-serif;
+        font-size:1rem;
+        border-radius:0.2rem;
+        margin:1rem 0 1rem 0;
+        text-align:right;
+    }
+
+    h2 span{
+        font-family: 'Poppins', sans-serif; 
+        margin-left:3px;
+        float:left;
+        font-size:1rem;
+        margin-top:0.1rem;
     }
 
     p{
@@ -45,8 +78,23 @@ export const TransactionContainerCards = styled.div`
         font-size:1rem;
     }
 
-    span{
-        
+    .update-button{
+        color:var(--green-color);
+    }
+
+    .update-button:hover{
+        background-color:var(--green-color);;
+        color:white;
+    }
+
+    .delete-button{
+        color:#ef233c;
+    }
+
+    .delete-button:hover{
+        background-color:red;
+        color:white;
+
     }
 
 `;

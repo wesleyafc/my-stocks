@@ -6,6 +6,11 @@ import { NavLink } from 'react-router-dom'
 export function Header() {
     const [value, setValue] = useState(0);
     const logged = true
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    }
+
     return (
         <div>
             <AppBar
@@ -22,7 +27,7 @@ export function Header() {
                         indicatorColor='secondary'
                         textColor='inherit'
                         value={value}
-                        onChange={(e, val) => setValue(val)}
+                        onChange={handleChange}
                     >
 
                         <Tab
@@ -58,11 +63,13 @@ export function Header() {
                         <Tab
                             LinkComponent={NavLink}
                             to="/about"
-                            label="About" />
+                            label="About"
+                        />
 
 
                         {logged ?
-                            <Tab label="Logout" /> :
+                            <Tab
+                                label="Logout" /> :
                             <Tab label="Login" />
                         }
 
