@@ -8,7 +8,6 @@ import { api_url } from "../../utils/apiURL";
 export function SingleTransaction() {
     const id = useParams().transaction_id
     const [inputs, setInputs] = useState({})
-    const cor = "#10b981"
 
 
     useEffect(() => {
@@ -55,7 +54,7 @@ export function SingleTransaction() {
 
                     <FormLabel>action Name</FormLabel>
                     <TextField
-                        value={inputs.actionsName}
+                        value={inputs.actionsName || ''}
                         onChange={handleChange}
                         margin="normal"
                         fullWidth
@@ -65,7 +64,7 @@ export function SingleTransaction() {
 
                     <FormLabel>quotas ammount</FormLabel>
                     <TextField
-                        value={inputs.quotasAmmount}
+                        value={inputs.quotasAmmount || ''}
                         onChange={handleChange}
                         type="number"
                         step="0.01"
@@ -77,7 +76,7 @@ export function SingleTransaction() {
 
                     <FormLabel>single quota value</FormLabel>
                     <TextField
-                        value={inputs.singleQuotaValue}
+                        value={inputs.singleQuotaValue || ''}
                         onChange={handleChange}
                         type="number"
                         step="0.01"
@@ -87,7 +86,6 @@ export function SingleTransaction() {
                         name="singleQuotaValue"
                     />
                     <Button
-                        color="sucess"
                         onClick={senRequestFromDataBase}
                         variant="contained"
                         type="submit">save</Button>

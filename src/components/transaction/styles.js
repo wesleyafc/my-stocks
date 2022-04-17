@@ -15,13 +15,15 @@ export const TransactionContainerCards = styled.div`
     border:1px solid var(--green-color);
     color:var(--light-black-color);
 
+    &:hover{
+        transform:scale(1.1);
+        background-color:var(--light-blue);
+    }
+
     h1{
         padding:1rem;
         color:var(--green-color);
-
-
     }
-
 
     h3{
         font-family: 'Poppins', sans-serif;      
@@ -80,6 +82,7 @@ export const TransactionContainerCards = styled.div`
 
     .update-button{
         color:var(--green-color);
+        margin-top:0.2rem;
     }
 
     .update-button:hover{
