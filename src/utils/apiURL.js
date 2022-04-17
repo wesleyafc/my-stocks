@@ -1,0 +1,1 @@
+export const api_url = "https://fii-api.herokuapp.com"
