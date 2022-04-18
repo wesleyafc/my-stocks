@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Transaction } from '../transaction'
 
-import { UlContainer } from './styles'
+import { UlContainer, TotalInvestiments } from './styles'
 import axios from 'axios'
 
 import { api_url } from '../../utils/apiURL'
@@ -24,10 +24,21 @@ export function Transactions() {
 
         fetchTransactions()
     }, [])
+
+    const totalTransactions = transactions.reduce((acc, curr) => {
+        return acc + curr.quotasAmmount * curr.singleQuotaValue
+    }, 0).toFixed(2)
+
     return (
 
         <>
             <NewTransactionModal />
+            <TotalInvestiments>
+                <h1> meu patrimônio <br />
+                    <span>R$ {totalTransactions}</span>
+                    {/* <hr /> */}
+                </h1>
+            </TotalInvestiments>
             <UlContainer >
                 {isLoading ? <HalfMalf
                     text={"Loading..."}
