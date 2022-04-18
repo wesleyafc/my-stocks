@@ -4,6 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { ModalContainer, InputContainer } from './styles'
 import axios from 'axios';
 import { api_url } from '../../utils/apiURL'
+import { onlyNumbers } from '../../utils/handle'
 Modal.setAppElement('#root');
 const customStyles = {
 
@@ -58,6 +59,7 @@ export function NewTransactionModal() {
         await axios.post(api_url + "/transaction", newTransaction)
         window.location.replace('/transactions')
     }
+
     return (
         <ModalContainer>
 
@@ -93,6 +95,7 @@ export function NewTransactionModal() {
                         />
 
                         <input
+                            onKeyPress={onlyNumbers}
                             type="number"
                             placeholder='quantidade de cotas adquiridas'
                             onChange={e => setQuotasAmmount(e.target.value)}
@@ -100,6 +103,7 @@ export function NewTransactionModal() {
                         />
 
                         <input
+                            onKeyPress={onlyNumbers}
                             type="number" step="0.01"
                             placeholder='valor unitario da cota'
                             onChange={e => setSingleQuotaValue(e.target.value)}
