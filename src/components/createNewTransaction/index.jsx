@@ -50,7 +50,7 @@ export function CreateNewTransaction() {
 
                 <FormLabel>action Name</FormLabel>
                 <TextField
-                    value={input.actionsName}
+                    value={input.actionsName || ''}
                     onChange={handleChange}
                     margin="normal"
                     fullWidth
@@ -60,7 +60,7 @@ export function CreateNewTransaction() {
 
                 <FormLabel>quotas ammount</FormLabel>
                 <TextField
-                    value={input.quotasAmmount}
+                    value={input.quotasAmmount || ''}
                     onChange={handleChange}
                     type="number"
                     step="0.01"
@@ -72,7 +72,7 @@ export function CreateNewTransaction() {
 
                 <FormLabel>single quota value</FormLabel>
                 <TextField
-                    value={input.singleQuotaValue}
+                    value={input.singleQuotaValue || ''}
                     onChange={handleChange}
                     type="number"
                     step="0.01"
