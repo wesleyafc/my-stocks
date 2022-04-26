@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AppBar, Typography, Toolbar, Tabs, Tab } from '@mui/material'
+import { AppBar, Typography, Toolbar, Tabs, Tab, Avatar } from '@mui/material'
 import { GiReceiveMoney } from "react-icons/gi";
 import { NavLink } from 'react-router-dom'
 
@@ -52,27 +52,18 @@ export function Header() {
                             null
                         }
 
-                        {/* {logged ?
-                            <Tab
-                                LinkComponent={NavLink}
-                                to="/single-transaction-detail"
-                                label="Single Transaction" /> :
-                            null
-                        } */}
-
+                        {/* later move this for footer  */}
                         <Tab
                             LinkComponent={NavLink}
                             to="/about"
                             label="About"
                         />
 
-
-                        {logged ?
-                            <Tab
-                                label="Logout" /> :
-                            <Tab label="Login" />
-                        }
-
+                        <Tab
+                            LinkComponent={NavLink}
+                            to="/profile"
+                            label={logged ? <Avatar src="https://images7.alphacoders.com/719/thumb-1920-719179.png" /> : "Login"}
+                        />
                     </Tabs>
 
                 </Toolbar >

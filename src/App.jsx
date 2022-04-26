@@ -6,6 +6,7 @@ import { About } from './components/about';
 import { NewTransactionModal } from '../src/components/newTransaction'
 import { CreateNewTransaction } from '../src/components/createNewTransaction'
 import { SingleTransaction } from '../src/components/singleTransaction'
+import { Profile } from '../src/components/profile';
 
 
 import { GlobalStyles } from "./globalStyles";
@@ -38,6 +39,8 @@ function App() {
 
           <Route path="/add" element={<CreateNewTransaction />} exact />
           {/* create new transaction */}
+
+          <Route path="/profile" element={<Profile />} exact />
 
         </Routes>
       </main>
