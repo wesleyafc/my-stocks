@@ -7,6 +7,8 @@ import { NewTransactionModal } from '../src/components/newTransaction'
 import { CreateNewTransaction } from '../src/components/createNewTransaction'
 import { SingleTransaction } from '../src/components/singleTransaction'
 import { Profile } from '../src/components/profile';
+import { Login } from '../src/components/login';
+import { Register } from '../src/components/register';
 
 
 import { GlobalStyles } from "./globalStyles";
@@ -41,6 +43,13 @@ function App() {
           {/* create new transaction */}
 
           <Route path="/profile" element={<Profile />} exact />
+          {/* profile page */}
+
+          <Route path="/login" element={<Login />} exact />
+          {/* login page */}
+
+          <Route path="/sign-up" element={<Register />} exact />
+          {/* register page */}
 
         </Routes>
       </main>

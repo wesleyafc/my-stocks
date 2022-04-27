@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { AppBar, Typography, Toolbar, Tabs, Tab, Avatar } from '@mui/material'
+import { AppBar, Typography, Toolbar, Tabs, Tab } from '@mui/material'
 import { GiReceiveMoney } from "react-icons/gi";
 import { NavLink } from 'react-router-dom'
 
 export function Header() {
     const [value, setValue] = useState(0);
-    const logged = true
+    const logged = false
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -59,11 +59,25 @@ export function Header() {
                             label="About"
                         />
 
-                        <Tab
+                        {logged ?
+                            null
+                            :
+                            < Tab
+                                LinkComponent={NavLink}
+                                to="/sign-up"
+                                label="sign-up" />
+                        }
+
+                        {logged ? <Tab
                             LinkComponent={NavLink}
                             to="/profile"
-                            label={logged ? <Avatar src="https://images7.alphacoders.com/719/thumb-1920-719179.png" /> : "Login"}
-                        />
+                            label="profile"
+                        /> : <Tab
+                            LinkComponent={NavLink}
+                            to="/login"
+                            label="Login"
+                        />}
+
                     </Tabs>
 
                 </Toolbar >
