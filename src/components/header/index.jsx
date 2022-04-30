@@ -36,47 +36,37 @@ export function Header() {
                             label="Home" />
 
 
-                        {logged ?
-                            <Tab
-                                LinkComponent={NavLink}
-                                to="/add"
-                                label="Add New Transactions" />
-                            : null
-                        }
+                        <Tab
+                            LinkComponent={NavLink}
+                            to="/add"
+                            label="Add New Transactions" />
 
-                        {logged ?
-                            <Tab
-                                LinkComponent={NavLink}
-                                to="/transactions"
-                                label="My Transactions" /> :
-                            null
-                        }
+                        <Tab
+                            LinkComponent={NavLink}
+                            to="/transactions"
+                            label="My Transactions" />
 
-                        {/* later move this for footer  */}
                         <Tab
                             LinkComponent={NavLink}
                             to="/about"
                             label="About"
                         />
 
-                        {logged ?
-                            null
-                            :
-                            < Tab
-                                LinkComponent={NavLink}
-                                to="/sign-up"
-                                label="sign-up" />
-                        }
+                        < Tab
+                            LinkComponent={NavLink}
+                            to="/sign-up"
+                            label="sign-up" />
 
-                        {logged ? <Tab
+                        <Tab
                             LinkComponent={NavLink}
                             to="/profile"
                             label="profile"
-                        /> : <Tab
+                        />
+                        <Tab
                             LinkComponent={NavLink}
                             to="/login"
                             label="Login"
-                        />}
+                        />
 
                     </Tabs>
 
