@@ -7,7 +7,15 @@ import { Context } from '../../context/Context';
 
 export function Header() {
     const [value, setValue] = useState(0);
-    const { user } = useContext(Context)
+    const { user, dispatch } = useContext(Context)
+
+    const handleLogout = () => {
+        dispatch({
+            type: 'LOGOUT'
+        })
+
+
+    }
 
 
     const handleChange = (event, newValue) => {
@@ -79,6 +87,13 @@ export function Header() {
                             LinkComponent={NavLink}
                             to="/login"
                             label="Login"
+                        />}
+
+                        {user && <Tab
+                            LinkComponent={NavLink}
+                            to="/"
+                            label="Logout"
+                            onClick={handleLogout}
                         />}
 
                     </Tabs>
