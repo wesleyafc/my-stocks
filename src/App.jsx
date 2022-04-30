@@ -1,3 +1,4 @@
+// import { useContext } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import { Header } from "./components/header";
 import { Home } from './components/home';
@@ -9,11 +10,14 @@ import { SingleTransaction } from '../src/components/singleTransaction'
 import { Profile } from '../src/components/profile';
 import { Login } from '../src/components/login';
 import { Register } from '../src/components/register';
+// import { Context } from '../src/context/Context';
+
 
 
 import { GlobalStyles } from "./globalStyles";
 
 function App() {
+  // const { user } = useContext(Context)
   return (
     <>
 
@@ -23,6 +27,8 @@ function App() {
 
       <main>
         <Routes>
+
+
           <Route path="/" element={<Home />} exact />
           {/* home page */}
 
@@ -43,7 +49,6 @@ function App() {
           {/* create new transaction */}
 
           <Route path="/profile" element={<Profile />} exact />
-          {/* profile page */}
 
           <Route path="/login" element={<Login />} exact />
           {/* login page */}

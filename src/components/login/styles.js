@@ -76,6 +76,16 @@ export const ButtonLogin = styled.button`
 
     }
 
+    :disabled{
+        cursor:not-allowed;
+    }
+    
+`;
+
+export const SpanError = styled.span`
+    color:red;
+    text-align:center;
+    margin-top:5px;
 `;
 
 export const ButtonRegister = styled.button`

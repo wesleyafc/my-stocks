@@ -1,11 +1,14 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { AppBar, Typography, Toolbar, Tabs, Tab } from '@mui/material'
 import { GiReceiveMoney } from "react-icons/gi";
 import { NavLink } from 'react-router-dom'
+import { Context } from '../../context/Context';
+
 
 export function Header() {
     const [value, setValue] = useState(0);
-    const logged = false
+    const { user } = useContext(Context)
+
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -36,37 +39,47 @@ export function Header() {
                             label="Home" />
 
 
-                        <Tab
-                            LinkComponent={NavLink}
-                            to="/add"
-                            label="Add New Transactions" />
+                        {user ?
+                            <Tab
+                                LinkComponent={NavLink}
+                                to="/add"
+                                label="Add New Transactions" />
+                            : null
+                        }
 
-                        <Tab
-                            LinkComponent={NavLink}
-                            to="/transactions"
-                            label="My Transactions" />
+                        {user ?
+                            <Tab
+                                LinkComponent={NavLink}
+                                to="/transactions"
+                                label="My Transactions" /> :
+                            null
+                        }
 
+                        {/* later move this for footer  */}
                         <Tab
                             LinkComponent={NavLink}
                             to="/about"
                             label="About"
                         />
 
-                        < Tab
-                            LinkComponent={NavLink}
-                            to="/sign-up"
-                            label="sign-up" />
+                        {user ?
+                            null
+                            :
+                            < Tab
+                                LinkComponent={NavLink}
+                                to="/sign-up"
+                                label="sign-up" />
+                        }
 
-                        <Tab
+                        {user ? <Tab
                             LinkComponent={NavLink}
                             to="/profile"
                             label="profile"
-                        />
-                        <Tab
+                        /> : <Tab
                             LinkComponent={NavLink}
                             to="/login"
                             label="Login"
-                        />
+                        />}
 
                     </Tabs>
 
