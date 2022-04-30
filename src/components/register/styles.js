@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const RegisterContainer = styled.div`
     height:calc(100vh - 50px);
+    width:100%;
     display:flex;
     align-items:center;
     flex-direction:column;
@@ -75,6 +76,13 @@ export const ButtonLogin = styled.button`
 
     }
 
+`;
+
+export const SpanError = styled.span`
+    color:red;
+    text-align:center;
+    font-size:16px;
+    word-break:break-all;
 `;
 
 export const ButtonRegister = styled.button`
