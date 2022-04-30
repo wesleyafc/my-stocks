@@ -45,7 +45,7 @@ function App() {
           <Route path="/single-transaction-detail/:transaction_id" element={<SingleTransaction />} exact />
           {/* show single transaction details */}
 
-          <Route path="/add" element={<CreateNewTransaction />} exact />
+          {/* <Route path="/add" element={<CreateNewTransaction />} exact /> */}
           {/* create new transaction */}
 
           <Route path="/profile" element={<Profile />} exact />

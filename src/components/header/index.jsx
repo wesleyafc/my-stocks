@@ -46,14 +46,14 @@ export function Header() {
                             to="/"
                             label="Home" />
 
-
-                        {user ?
+                        {/* have many error here */}
+                        {/* {user ?
                             <Tab
                                 LinkComponent={NavLink}
                                 to="/add"
                                 label="Add New Transactions" />
                             : null
-                        }
+                        } */}
 
                         {user ?
                             <Tab
