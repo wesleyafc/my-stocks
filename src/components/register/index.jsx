@@ -4,15 +4,12 @@ import { api_url } from '../../utils/apiURL'
 
 
 import {
-    RegisterContainer,
-    Form,
-    Label,
+    Button,
+    Container,
     Input,
-    ButtonRegister,
-    ButtonLogin,
-    SpanError,
+    SubTitle,
     Title,
-    BorderStyle
+    Wrapper
 
 } from "./styles";
 
@@ -44,10 +41,28 @@ export function Register() {
         }
     }
     return (
-        <RegisterContainer>
-            <BorderStyle>
+        <Container>
+            <Wrapper>
+                <Title>Entrar</Title>
+                <SubTitle>Entrar na sua conta</SubTitle>
+                <Input placeholder='Usuario' />
+                <Input type='password' placeholder='Senha' />
+                <Button>entrar</Button>
 
-                <Title>Sign-up</Title>
+                <Title>Criar Nova Conta</Title>
+                <Input placeholder='Usuario' />
+                <Input type='email' placeholder='Email' />
+                <Input type='password' placeholder='Senha' />
+                <Button>registrar</Button>
+
+            </Wrapper>
+        </Container>
+    )
+}
+
+
+
+{/* <Title>Sign-up</Title>
                 <Form
                     onSubmit={handleSubmit}
                 >
@@ -81,7 +96,4 @@ export function Register() {
                     {error && <SpanError>username or email already registered</SpanError>}
                 </Form>
                 <ButtonRegister>already registered ?</ButtonRegister>
-            </BorderStyle>
-        </RegisterContainer>
-    )
-}
+              */}

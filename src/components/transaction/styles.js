@@ -16,8 +16,8 @@ export const TransactionContainerCards = styled.div`
     color:var(--light-black-color);
 
     &:hover{
-        transform:scale(1.1);
-        background-color:var(--light-blue);
+        transform:scale(1.05);
+        background-color:var(--light-white);
     }
 
     h1{

@@ -1,6 +1,6 @@
 
 export function Home() {
     return (
-        <div>home</div>
+        <h1>HOME PAGE <br /> **Not Finished**</h1>
     )
 }

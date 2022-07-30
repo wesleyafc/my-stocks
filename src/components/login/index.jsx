@@ -51,36 +51,34 @@ export function Login() {
 
     return (
         <LoginContainer>
-            <BorderStyle>
 
-                <Title>Login</Title>
-                <Form onSubmit={handleSubmit}>
-                    <Label >Email</Label>
-                    <Input
-                        type="text"
-                        placeholder="username"
-                        ref={userRef}
-                    />
+            <Title>Login</Title>
+            <Form onSubmit={handleSubmit}>
+                <Label >Email</Label>
+                <Input
+                    type="text"
+                    placeholder="username"
+                    ref={userRef}
+                />
 
-                    <Label >Password</Label>
-                    <Input
-                        type="password"
-                        placeholder="password"
-                        ref={passwordRef}
-                    />
+                <Label >Password</Label>
+                <Input
+                    type="password"
+                    placeholder="password"
+                    ref={passwordRef}
+                />
 
-                    <ButtonLogin
-                        type="submit"
-                        disabled={isFetching}
-                    >
-                        Login
-                    </ButtonLogin>
+                <ButtonLogin
+                    type="submit"
+                    disabled={isFetching}
+                >
+                    Login
+                </ButtonLogin>
 
-                    {isFetching && <SpanError>loading...</SpanError>}
+                {isFetching && <SpanError>loading...</SpanError>}
 
-                </Form>
-                <ButtonRegister>register</ButtonRegister>
-            </BorderStyle>
+            </Form>
+            <ButtonRegister>register</ButtonRegister>
         </LoginContainer>
     )
 }

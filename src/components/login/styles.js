@@ -89,7 +89,7 @@ export const SpanError = styled.span`
 `;
 
 export const ButtonRegister = styled.button`
-    width:100%;
+    width:11%;
     font-size:12px;
     background-color:#d90429;
     border:none;
